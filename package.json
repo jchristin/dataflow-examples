@@ -1,0 +1,25 @@
+{
+  "name": "dataflow-examples",
+  "version": "1.0.0",
+  "description": "Dataflow examples",
+  "scripts": {
+    "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julbaxter/dataflow-examples.git"
+  },
+  "keywords": [
+    "dataflow"
+  ],
+  "author": "Julien Christin <jul.christin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julbaxter/dataflow-examples/issues"
+  },
+  "homepage": "https://github.com/julbaxter/dataflow-examples",
+  "dependencies": {
+    "dataflow": "^0.5.0",
+    "dataflow-brick-standard": "^0.4.0"
+  }
+}

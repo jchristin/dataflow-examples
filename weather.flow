@@ -1,0 +1,22 @@
+COMPOSITE Main
+	BRICKS
+	getUrl "dataflow-brick-standard/lib/send-packet"
+	request "dataflow-brick-standard/lib/request"
+	jsonPath "dataflow-brick-standard/lib/json-path"
+	createObject "dataflow-brick-standard/lib/create-object"
+	template "dataflow-brick-standard/lib/template"
+	
+	LINKS
+	this.start | getUrl.input
+	getUrl.output | request.url
+	request.body | jsonPath.json
+	jsonPath.value | createObject.value
+	createObject.object | template.input
+	template.output | this.output
+
+	PROPS
+	getUrl.data "http://api.openweathermap.org/data/2.5/weather?q=montreal&units=metric"
+	jsonPath.path "$.main.temp"
+	createObject.key "temp"
+	template.text "The temperature in Montreal is <%= temp %> degrees Celsius."
+END
